@@ -15,9 +15,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
     }
 
-    public void showAsCenterInSide(View view){
-        startActivity(new Intent(this,CenterInsideActivity.class));
-    }
+    public void showAsCenterInSide(View view){startActivity(new Intent(this,CenterInsideActivity.class));}
 
     public void showAsPages(View view){
         startActivity(new Intent(this,PagesActivity.class));
