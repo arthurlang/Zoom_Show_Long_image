@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context=".ui.activity.MainActivity">
+
+    <Button
+        android:id="@+id/centerInSide1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showAsCenterInSide"
+        android:text="showAsCenterInSide"/>
+
+    <Button
+        android:id="@+id/centerInSide2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showAsPages"
+        android:text="showAsPages"/>
+
+    <Button
+        android:id="@+id/showZoom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showZoom"
+        android:text="showZoom"/>
+
+    <Button
+        android:id="@+id/fresco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showZoomWithfresco"
+        android:text="showZoomfresco"/>
+
+
+</LinearLayout>
