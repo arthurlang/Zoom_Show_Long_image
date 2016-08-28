@@ -15,8 +15,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.CenterInsideActivity"/>
-        <activity android:name=".ui.activity.PagesActivity"/>
+        <activity android:name=".ui.activity.LongPhotoActivity"/>
         <activity android:name=".ui.activity.ZoomPhotoActivity"/>
     </application>
 

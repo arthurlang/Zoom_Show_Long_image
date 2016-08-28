@@ -2,8 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.example.langjian.superlargeimageapp.ui.view.LargeImgView
-        android:id="@+id/long_image_view"
+
+    <ImageView
+        android:id="@+id/showImageView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:src="@drawable/png_photo"
+        android:scaleType="centerInside"
+        android:background="@color/colorPrimary"
+        />
+
 </LinearLayout>

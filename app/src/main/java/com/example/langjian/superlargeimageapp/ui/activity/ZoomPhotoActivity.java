@@ -17,29 +17,45 @@ import samples.zoomable.ZoomableDraweeView;
  * Version
  */
 public class ZoomPhotoActivity extends Activity {
-    private ImageView imageView;
-
+    private ZoomableDraweeView fresco_photo_view;
+    private PhotoViewAttacher mPhotoViewAttacher;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.zoom_layout);
-        PhotoViewAttacher photoViewAttacher = null;
-        if("fresco".equals(getIntent().getStringExtra("type"))){
-            final ZoomableDraweeView photo_view = (ZoomableDraweeView) findViewById(R.id.photo_view);
-            photo_view.setImageResource(R.drawable.longphoto);
-            photoViewAttacher = new PhotoViewAttacher(photo_view);
-        }else{
-            imageView = (ImageView) findViewById(R.id.normal_image);
-            photoViewAttacher = new PhotoViewAttacher(imageView);
-        }
+        fresco_photo_view = (ZoomableDraweeView) findViewById(R.id.photo_view);
+        fresco_photo_view.setImageResource(R.drawable.longphoto);
+        fresco_photo_view.setVisibility(View.VISIBLE);
+        initPhotoAttacher();
+    }
 
-        photoViewAttacher.setSupportTwiceZoom(false);
-        photoViewAttacher.setMinGestureScale(0.5f);
-        photoViewAttacher.setMaximumScale(1.5f);
-        photoViewAttacher.setOnViewTapListener(new PhotoViewAttacher.OnViewTapListener() {
+    private void initPhotoAttacher() {
+        mPhotoViewAttacher = new PhotoViewAttacher(fresco_photo_view);
+        mPhotoViewAttacher.setMaximumScale(1.5f);
+        mPhotoViewAttacher.setSupportTwiceZoom(false);
+        mPhotoViewAttacher.setMinGestureScale(0.5f);
+        mPhotoViewAttacher.setSupportTwiceZoom(false);
+        mPhotoViewAttacher.setMinGestureScale(0.5f);
+        mPhotoViewAttacher.setMaximumScale(1.5f);
+        mPhotoViewAttacher.setOnViewTapListener(new PhotoViewAttacher.OnViewTapListener() {
             @Override
             public void onViewTap(View view, float x, float y) {
                 Toast.makeText(ZoomPhotoActivity.this,"Tap View",Toast.LENGTH_LONG).show();
+            }
+        });
+        fresco_photo_view.post(new Runnable() {
+            @Override
+            public void run() {
+                int width = fresco_photo_view.getWidth();
+                int height = fresco_photo_view.getHeight();
+                if(height > 0 && width>0 ){
+                    if (width / height > 10) {
+                        mPhotoViewAttacher.setMaximumScale(25f);
+                    } else if (height / width > 10) {
+                        mPhotoViewAttacher.setMaximumScale(15f);
+                    }
+                }
+                mPhotoViewAttacher.update();//do not forget update
             }
         });
     }

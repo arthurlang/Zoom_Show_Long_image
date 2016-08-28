@@ -4,9 +4,15 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.example.langjian.superlargeimageapp.R;
 
+/**
+ * @author langjian  2016/7/26
+ * Description 1、可缩放的大图。2、可横向或者纵向互动的大图。
+ * Version @version V1.0
+ */
 public class MainActivity extends Activity {
 
     @Override
@@ -15,20 +21,14 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
     }
 
-    public void showAsCenterInSide(View view){startActivity(new Intent(this,CenterInsideActivity.class));}
-
-    public void showAsPages(View view){
-        startActivity(new Intent(this,PagesActivity.class));
-    }
-
-    public void showZoom(View view){
-        startActivity(new Intent(this,ZoomPhotoActivity.class));
-    }
-
     public void showZoomWithfresco(View view){
         Intent intent = new Intent(this,ZoomPhotoActivity.class);
-        intent.putExtra("type","fresco");
         startActivity(intent);
+    }
+
+    //滑动循环展示长图和宽图
+    public void showSuperLongImage(View view){
+        startActivity(new Intent(this, LongPhotoActivity.class));
     }
 
 }

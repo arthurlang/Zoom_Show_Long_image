@@ -6,6 +6,7 @@
     <!--使用fresco绘制-->
     <samples.zoomable.ZoomableDraweeView
         android:id="@+id/photo_view"
+        android:src="@drawable/longphoto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"

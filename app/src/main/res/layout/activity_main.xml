@@ -12,32 +12,17 @@
     tools:context=".ui.activity.MainActivity">
 
     <Button
-        android:id="@+id/centerInSide1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="showAsCenterInSide"
-        android:text="showAsCenterInSide"/>
-
-    <Button
-        android:id="@+id/centerInSide2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="showAsPages"
-        android:text="showAsPages"/>
-
-    <Button
-        android:id="@+id/showZoom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="showZoom"
-        android:text="showZoom"/>
-
-    <Button
-        android:id="@+id/fresco"
+        android:id="@+id/showImageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="showZoomWithfresco"
         android:text="showZoomfresco"/>
 
+    <Button
+        android:id="@+id/showSuperLongImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showSuperLongImage"
+        android:text="showSuperLongImage"/>
 
 </LinearLayout>

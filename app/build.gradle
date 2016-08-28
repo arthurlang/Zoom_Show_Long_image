@@ -25,7 +25,5 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:23.2.1'
     //    compile 'com.facebook.android:facebook-android-sdk:3.22.0'
-    //compile files('libs/allclasses.jar')
-    compile files('libs/facebook-android-sdk-4.10.1.jar')
-    compile files('libs/fresco.jar')
+    compile 'com.facebook.fresco:fresco:0.12.0'
 }

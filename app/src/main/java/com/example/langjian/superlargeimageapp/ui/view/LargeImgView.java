@@ -86,7 +86,6 @@ public class LargeImgView extends ImageView {
                             }
                         };
 
-                        //PicUtil.getIsFromBitmap(bm);
                         mDecoder = BitmapRegionDecoder.newInstance(is, true);
                         bs = new Bitmap[count];
                         for(int i=0;i<count;i++){
@@ -118,7 +117,6 @@ public class LargeImgView extends ImageView {
         try {
             int top = 0;
             for(int i=0;bs!=null && i<bs.length;i++){
-                //DeLog.d(TAG,"i =" +i +",bs.length="+bs.length+",top="+top+",scale="+minScale);
                 canvas.save();
                 if(minScale != 0){
                     canvas.scale(minScale, minScale);
